@@ -14,67 +14,67 @@ require 'twilio-ruby'
 
 enable :sessions
 
-# get "/" do
-# 	"Hello world!"
-# end
-#
-#
-#
-# get "/" do
-#  	     redirect '/about'
-# end
-#
-#
-# empty_array = []
-# greetings = ["Howdy!", "Hola.", "Hiyaya.", "I'm sun-bathing, what are you doing?", "Heya.", "Hey you.","Moin"]
-#
-# get '/about' do
-# 	session["visits"] ||= 0 # Set the session to 0 if it hasn't been set before
-#   session["visits"] = session["visits"] + 1
-#
-#   time = Time.new
-#   num_choice = rand(7) #To random greetings
-#
-# 	if !session[:first_name].nil? && !session[:number].nil?
-# 	     greetings.sample + ", " + "#{session[:first_name]} (#{session[:number]})
-# 	     <br />
-# 	     Total visits: #{session[:visits].to_s} times as #{time.strftime("%A %B %d, %Y %H:%M")}"
-# 	else
-# 	     "Bear is a fun-loving, caring and insightful bear. Try talk to him and see what he says :)
-# 	     <br />
-# 	     You have visited #{session[:visits].to_s} times as of #{time.strftime("%A %B %d, %Y %H:%M")}"#returns mmddyy
-# 	end
-# end
-#
-#
-# get '/signup' do
-#   	"Sign up for Bear" + "</br>" + "Enter your name"
-# end
-#
-# get '/signup/:first_name/:number' do
-#   	session[:first_name] = params[:first_name]
-#   	session[:number] = params[:number]
-#   	"<h1> Hi, </h1>" + params[:first_name] + ", "+ params[:number]
-# end
-#
-#   post "/signup" do
-#     if params[:first_name] == "" || params[:number]==""
-#       return "Your information in incomplete."
-#     else
-#       client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-#
-#       # Include a message here
-#       message = "Hi" + params[:first_name] + ", welcome to Bear! I can respond to who, what, where, when and why. If you're stuck, type help."
-#       # this will send a message from any end point
-#       client.api.account.messages.create(
-#         from: ENV["TWILIO_FROM"],
-#         to: params[:number],
-#         body: message
-#       )
-#   	   # response if eveything is OK
-#   	   return "You're signed up. You'll receive a text message in a few minutes from Bear. "
-#      end
-#    end
+get "/" do
+	"Hello world!"
+end
+
+
+
+get "/" do
+ 	     redirect '/about'
+end
+
+
+empty_array = []
+greetings = ["Howdy!", "Hola.", "Hiyaya.", "I'm sun-bathing, what are you doing?", "Heya.", "Hey you.","Moin"]
+
+get '/about' do
+	session["visits"] ||= 0 # Set the session to 0 if it hasn't been set before
+  session["visits"] = session["visits"] + 1
+
+  time = Time.new
+  num_choice = rand(7) #To random greetings
+
+	if !session[:first_name].nil? && !session[:number].nil?
+	     greetings.sample + ", " + "#{session[:first_name]} (#{session[:number]})
+	     <br />
+	     Total visits: #{session[:visits].to_s} times as #{time.strftime("%A %B %d, %Y %H:%M")}"
+	else
+	     "Bear is a fun-loving, caring and insightful bear. Try talk to him and see what he says :)
+	     <br />
+	     You have visited #{session[:visits].to_s} times as of #{time.strftime("%A %B %d, %Y %H:%M")}"#returns mmddyy
+	end
+end
+
+
+get '/signup' do
+  	"Sign up for Bear" + "</br>" + "Enter your name"
+end
+
+get '/signup/:first_name/:number' do
+  	session[:first_name] = params[:first_name]
+  	session[:number] = params[:number]
+  	"<h1> Hi, </h1>" + params[:first_name] + ", "+ params[:number]
+end
+
+  post "/signup" do
+    if params[:first_name] == "" || params[:number]==""
+      return "Your information in incomplete."
+    else
+      client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+
+      # Include a message here
+      message = "Hi" + params[:first_name] + ", welcome to Bear! I can respond to who, what, where, when and why. If you're stuck, type help."
+      # this will send a message from any end point
+      client.api.account.messages.create(
+        from: ENV["TWILIO_FROM"],
+        to: params[:number],
+        body: message
+      )
+  	   # response if eveything is OK
+  	   return "You're signed up. You'll receive a text message in a few minutes from Bear. "
+     end
+   end
 
 get '/incoming/sms' do
   session["counter"] ||= 1
