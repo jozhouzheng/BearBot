@@ -91,7 +91,7 @@ get "/incoming/sms" do
     message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'questions' to get a list of questions you can ask me."
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
   elsif body.include? "like to do" or body.include? "like doing" #when user ask what do you like to do
-    message = "I like to eat honey, and read! I'm a well-read bear. Give me a book title and I will let you know what I think"
+    message = "I like to eat honey, and read! I'm a well-read bear. Give me a book title and I will let you know what I think."
       # media = #gif
   elsif body.include? "quote" #"what's your favorite quote?"
     message = "A well-read bear is a dangerous creature.🤓"
@@ -106,10 +106,13 @@ get "/incoming/sms" do
 
     \"What do you like the most?\"
 
+    \"What do you do for fun?\"
+
     \"What books are you currently reading?\"
 
     \"What are Bear's favorite books?\""
-  elsif body == "What are Bear's favorite books?"
+
+  elsif body.include? "What are Bear's favorite books?"
     message = "You just picked my favorite question! Hummm but I can only share it if you feed me honey 🍯😎...alright alrigh here you go:
 
     \"Man's Search for Meaning\"
@@ -124,12 +127,12 @@ get "/incoming/sms" do
 
     \"The Wisdom of Life\"
 
-    Try type in the title of the book and I will let you know what I think about the book!"  
+    Try type in the title of the book and I will let you know what I think about the book!"
     media ="https://media.giphy.com/media/126BrhLh4YgwkE/giphy.gif"
-  elsif body == "What do you like the most?"
+  elsif body.include? "like the most?"
     message = "Food...and honey! "
     media = "https://media.giphy.com/media/fdWVI1op6wi88/giphy.gif"
-  elsif body == "What do you like to do?"
+  elsif body == "What do you do for fun?"
     message = "Cuddle with my pillow."
     media = "https://media.giphy.com/media/2QIbGQ1WEVF6M/giphy.gif"
 
