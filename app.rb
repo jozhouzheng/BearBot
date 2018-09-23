@@ -85,7 +85,7 @@ get '/incoming/sms' do
     message = "Welcome to Bear! I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 "
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
   else
-    message = "It's Bear here 🐻. What's up?! "#How do i add first name
+    message = "It's Bear here 🐻. What's up? "#How do i add first name
     media = "https://media.giphy.com/media/lII8kUqoT5MD6/giphy.gif"
     #media = nil
   end
