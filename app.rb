@@ -112,6 +112,7 @@ get "/incoming/sms" do
     🐻 Now...type another book title or just say goodbye to me."
   elsif body.include? "bye" or body.include? "goodbye" or body.include? "ttyl" or body.include? "see you"
     message = "Bye. Ttyl!"
+    media = "https://media.giphy.com/media/JPbZwjMcxJYic/giphy.gif"
   else
     message = "Hmmmm...I didn't understand that 🧐. Try type in 'questions' to get a list of questions you can ask me."
 end
