@@ -39,7 +39,7 @@ get "/incoming/sms" do
   if session["counter"] == 1
     message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'questions' to get a list of questions you can ask me."
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
-  elsif body.include? "bear" or body.include? "hey" or body.include? "hi" or body.include "Hello"
+  elsif body.include? "bear" or body.include? "hey" or body.include? "hi" or body.include? "Hello"
     message = "Hey you! Bear here 🐻. What do you want to know about me today? Type in 'questions' to get a list of questions you can ask me."
   elsif body.include? "like to do" or body.include? "like doing" #when user ask what do you like to do
     message = "I like to eat honey, and read! I'm a well-read bear. Ask me about my favorite books."
