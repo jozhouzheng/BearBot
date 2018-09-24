@@ -40,14 +40,12 @@ get "/incoming/sms" do
     message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'questions' to get a list of questions you can ask me."
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
   elsif body.include? "like to do" or body.include? "like doing" #when user ask what do you like to do
-    message = "I like to eat honey, and read! I'm a well-read bear. Ask me about my favorite book."
+    message = "I like to eat honey, and read! I'm a well-read bear. Ask me about my favorite books."
     media = "https://media.giphy.com/media/84ZzhsJZWlE3e/giphy.gif"
   elsif body.include? "quote" #"what's your favorite quote?"
     message = "A well-read bear is a dangerous creature.🤓"
   elsif body.include? "questions"
     message = "You can ask me questions such as:
-
-    \"what do you like to do?\"
 
     \"what's your favorite quote?\"
 
@@ -55,7 +53,11 @@ get "/incoming/sms" do
 
     \"what do you do for fun?\"
 
-    \"what are bear's favorite books?\""
+    \"what are bear's favorite books?\"
+
+    \"what do you like to do?\"
+
+    "
 
   elsif body.include? "favorite books"
     message = "You just picked my favorite question! Hummm but I can only share it if you feed me with honey 🍯😎...alright alright here you go:
