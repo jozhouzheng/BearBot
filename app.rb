@@ -40,8 +40,8 @@ get "/incoming/sms" do
     message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'questions' to get a list of questions you can ask me."
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
   elsif body.include? "like to do" or body.include? "like doing" #when user ask what do you like to do
-    message = "I like to eat honey, and read! I'm a well-read bear. Give me a book title and I will let you know what I think."
-      # media = #gif
+    message = "I like to eat honey, and read! I'm a well-read bear. Ask me about my favorite book."
+    media = "https://media.giphy.com/media/84ZzhsJZWlE3e/giphy.gif"
   elsif body.include? "quote" #"what's your favorite quote?"
     message = "A well-read bear is a dangerous creature.🤓"
   elsif body.include? "questions"
@@ -57,7 +57,7 @@ get "/incoming/sms" do
 
     \"what are bear's favorite books?\""
 
-  elsif body == "what are bear's favorite books?"
+  elsif body.include? "favorite books"
     message = "You just picked my favorite question! Hummm but I can only share it if you feed me with honey 🍯😎...alright alright here you go:
 
     \"Man's Search for Meaning\"
@@ -96,7 +96,7 @@ get "/incoming/sms" do
   elsif body == "the unbearable lightness of being"
     message = "Kundera observes the stuff that goes on internally amongst the characters; he intellectualizes it, and tells you about it. He’s quite philosophical, and you feel like the narrator is talking to you, offering very insightful observations about the characters and life in general. This is one reason why reading is often more valuable than watching TV or a movie: when reading a good book you get direct psychological explanations, and you get to go inside the heads of characters.
 
-    🐻 Now...type 'more' to learn see more my thoughts on this book, another book title or just say goodbye to me."
+    🐻 Now...type 'more' to learn see more of my thoughts on this book, another book title or just say goodbye to me."
 
   elsif body == "more"
     message = "Taken as a whole, I found this novel to be profound, but in unusual ways. It’s not a direct novel, but rather one that represents, and lets one feel, disconnections and various glimpses of perceptions. And it wasn’t a smooth novel, either. It even felt choppy on occasion. But the chapters are short, which fits its feel, and also gives you time to think about the penetrating thoughts that Kundera puts across. Kundera strikes me as a craftsman of sorts. He switches timelines deftly and effectively – even when I thought he was crazy to do so; when I thought he gave up the climax of the novel towards its middle, he proved me dead wrong. He proved to me that he knew exactly what he was doing because he’s a master of the craft. This novel is not full of sweeping, pounding paragraphs of poignant, soul-hitting, philosophical depth, but rather offers up constant glimpses; nuggets of insightful observations on almost every page, that when added up together, reveal an impressive, heartfelt, and real work. 🐻 Now...type another book title or just say goodbye to me."
@@ -110,7 +110,8 @@ get "/incoming/sms" do
     Much of the advice offered is familiar to us but the thoroughness of his insights into how one best live one's life is definitely worth reading and rereading.
 
     🐻 Now...type another book title or just say goodbye to me."
-    
+  elsif body.include? "bye" or body.include? "goodbye" or body.include? "ttyl" or body.include? "see you"
+    message = "Bye. Ttyl!"
   else
     message = "Hmmmm...I didn't understand that 🧐. Try type in 'questions' to get a list of questions you can ask me."
 end
