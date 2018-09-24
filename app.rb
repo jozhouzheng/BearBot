@@ -77,7 +77,7 @@ get "/incoming/sms" do
   elsif body.include? "like the most"
     message = "Food...and honey! "
     media = "https://media.giphy.com/media/fdWVI1op6wi88/giphy.gif"
-  elsif body == "what do you do for fun?"
+  elsif body.include? "do for fun"
     message = "Cuddle with my pillow."
     media = "https://media.giphy.com/media/2QIbGQ1WEVF6M/giphy.gif"
   elsif body == "man's search for meaning"
