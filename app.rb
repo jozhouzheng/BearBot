@@ -37,7 +37,7 @@ get "/incoming/sms" do
   body = body.downcase.strip
 
   if session["counter"] == 1
-    message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'question' to get a list of questions you can ask me."
+    message = "It's Bear here 🐻. I'm a fun-loving, caring and insightful bear. Try talk to me and see what I say 😉 . Type in 'questions' to get a list of questions you can ask me."
     media = "https://media.giphy.com/media/xNQTp4xqjY22I/giphy.gif"
   elsif body.include? "like to do" or body.include? "like doing" #when user ask what do you like to do
     message = "I like to eat honey, and read! I'm a well-read bear. Give me a book title and I will let you know what I think."
@@ -68,7 +68,9 @@ get "/incoming/sms" do
 
     \"The Unbearable Lightness of Being\"
 
-    \"The Wisdom of Life\"" + "Try type in the title of the book and I will let you know what I think about the book!"
+    \"The Wisdom of Life\"
+
+    Try type in the title of the book and I will let you know what I think about the book!"
     media ="https://media.giphy.com/media/126BrhLh4YgwkE/giphy.gif"
   elsif body.include? "like the most"
     message = "Food...and honey! "
@@ -85,7 +87,7 @@ get "/incoming/sms" do
     to place a great value on the journey and not just the destination,
     while knowing that 'meaningful' doesn't always mean 'enjoyable'. 'Meaningful' should be equated with 'fulfilling'.
     🐻 Now...type another book title or just say goodbye to me."
-  elsif body == "Sapiens: A Brief History of Humankind"
+  elsif body == "sapiens: a brief history of humankind"
     message = "I believe I am relatively familiar with history in general,
     and I'm usually not very excited about reading more about it.
     ut this book was something else. Beautifully written and easy to read,
@@ -94,7 +96,7 @@ get "/incoming/sms" do
     Revolution by revolution, religion by religion, conception by conception,
     things were simplified and yet still maintained valid points - and it was never boring.
     🐻 Now...type another book title or just say goodbye to me."
-  elsif body == "Walden"
+  elsif body == "walden"
     message = "Thoreau makes us an apology for a healthy life away from the bustle
     of cities and constraints of modern society and castrating.
     Life as it should savor with nothing and everything around us
@@ -103,7 +105,7 @@ get "/incoming/sms" do
     Thoreau speaks true to all of the original life that we live simply and 'naturally poetic.'
     An indispensable bible!
     🐻 Now...type another book title or just say goodbye to me."
-  elsif body == "The Unbearable Lightness of Being"
+  elsif body == "the unbearable lightness of being"
     message = "Kundera observes the stuff that goes on internally amongst the characters;
     he intellectualizes it, and tells you about it. He’s quite philosophical,
     and you feel like the narrator is talking to you, offering very insightful
@@ -125,7 +127,7 @@ get "/incoming/sms" do
       glimpses; nuggets of insightful observations on almost every page, that when added up together,
       reveal an impressive, heartfelt, and real work.
       🐻 Type another book title or just say goodbye to me."
-    elsif body == "The Wisdom of Life"
+    elsif body == "the wisdom of life"
       message = "Beginning with the assumption that one's life will be essentially painful and miserable,
       Schopenhauer proceeds to offer thoughts about how we can eke out a bit of pleasure for ourselves
       during our brief time on this earth. Underlying much of his advice is the notion one should
@@ -138,7 +140,7 @@ get "/incoming/sms" do
       into how one best live one's life is definitely worth reading and rereading.
       🐻 Now...type another book title or just say goodbye to me."
   else
-    message = "Hmmmm...I didn't understand that 🧐. Try type in 'question' to get a list of questions you can ask me."
+    message = "Hmmmm...I didn't understand that 🧐. Try type in 'questions' to get a list of questions you can ask me."
 end
 #
 
