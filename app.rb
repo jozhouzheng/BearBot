@@ -98,21 +98,21 @@ get "/incoming/sms" do
   elsif body.include? "questions"
     message = "You can ask me questions such as:
 
-    \"What do you like to do?\"
+    \"what do you like to do?\"
 
-    \"What's your favorite quote?\"
+    \"what's your favorite quote?\"
 
-    \"What books are you currently reading?\"
+    \"what books are you currently reading?\"
 
-    \"What do you like the most?\"
+    \"what do you like the most?\"
 
-    \"What do you do for fun?\"
+    \"what do you do for fun?\"
 
-    \"What books are you currently reading?\"
+    \"what books are you currently reading?\"
 
-    \"What are Bear's favorite books?\""
+    \"what are Bear's favorite books?\""
 
-  elsif body.include? "What are Bear's favorite books?"
+  elsif body == "what are Bear's favorite books?"
     message = "You just picked my favorite question! Hummm but I can only share it if you feed me honey 🍯😎...alright alrigh here you go:
 
     \"Man's Search for Meaning\"
@@ -132,7 +132,7 @@ get "/incoming/sms" do
   elsif body.include? "like the most?"
     message = "Food...and honey! "
     media = "https://media.giphy.com/media/fdWVI1op6wi88/giphy.gif"
-  elsif body == "What do you do for fun?"
+  elsif body == "what do you do for fun?"
     message = "Cuddle with my pillow."
     media = "https://media.giphy.com/media/2QIbGQ1WEVF6M/giphy.gif"
 
